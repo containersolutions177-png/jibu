@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#117c58">
+  <meta name="description" content="Jibu — one platform for learning, commerce, savings and community.">
+  <title>Jibu | Your Everyday Platform</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Jibu home" data-tab-link="home">
+        <span class="brand-mark">J</span>
+        <span>jibu<span class="brand-dot">.</span></span>
+      </a>
+
+      <div class="header-actions">
+        <button id="modeToggle" class="mode-toggle" type="button"
+                aria-pressed="false" title="Switch demo mode">
+          <span class="mode-indicator"></span>
+          <span id="modeLabel">Demo</span>
+        </button>
+        <div class="score-pill" title="Demo Jibu score">
+          <span class="score-star">✦</span>
+          <span id="userScore">742</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="mainContent">
+      <section id="homeTab" class="tab-panel active" aria-labelledby="welcomeTitle">
+        <div class="welcome-card">
+          <div class="welcome-copy">
+            <span class="eyebrow">YOUR WORLD, CONNECTED</span>
+            <h1 id="welcomeTitle">Make your next move count.</h1>
+            <p>Discover opportunities, build skills and grow together.</p>
+            <button class="button button-light" type="button"
+                    data-tab-link="modules">Explore Jibu <span>→</span></button>
+          </div>
+          <div class="welcome-art" aria-hidden="true">
+            <span class="art-circle circle-one"></span>
+            <span class="art-circle circle-two"></span>
+            <span class="art-letter">J</span>
+          </div>
+        </div>
+
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">YOUR OVERVIEW</span>
+            <h2>Dashboard</h2>
+          </div>
+          <span class="live-label"><span></span> Demo insights</span>
+        </div>
+
+        <div id="statsGrid" class="stats-grid" aria-live="polite">
+          <article class="stat-card">
+            <span class="stat-icon">◉</span>
+            <span class="stat-label">Ad impressions</span>
+            <strong class="stat-value">19,000</strong>
+            <span class="stat-note">Across demo campaigns</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon">↗</span>
+            <span class="stat-label">Click-through rate</span>
+            <strong class="stat-value">3.63%</strong>
+            <span class="stat-note">Clicks / impressions</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon">◎</span>
+            <span class="stat-label">Conversions</span>
+            <strong class="stat-value">54</strong>
+            <span class="stat-note">Simulated results</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon">⌁</span>
+            <span class="stat-label">Bounce rate</span>
+            <strong class="stat-value">32.5%</strong>
+            <span class="stat-note">Illustrative metric</span>
+          </article>
+        </div>
+
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">ONE PLATFORM</span>
+            <h2>Explore modules</h2>
+          </div>
+          <button class="text-button" data-tab-link="modules" type="button">See all →</button>
+        </div>
+        <div id="homeModules" class="module-grid"></div>
+
+        <div class="notice">
+          <span>✦</span>
+          <p>You're exploring Jibu in demo mode. Your sample data is not permanently stored.</p>
+        </div>
+      </section>
+
+      <section id="safiriTab" class="tab-panel" aria-labelledby="safiriTitle">
+        <div class="page-heading">
+          <span class="eyebrow">DISCOVER & CONNECT</span>
+          <h1 id="safiriTitle">Safiri</h1>
+          <p>Relevant opportunities and advertising insights.</p>
+        </div>
+
+        <div class="feature-banner">
+          <span class="feature-icon">✦</span>
+          <div>
+            <h2>Better connections</h2>
+            <p>Explore demo campaigns and see how their metrics compare.</p>
+          </div>
+        </div>
+
+        <div class="section-heading">
+          <div><span class="eyebrow">CAMPAIGNS</span><h2>Discover</h2></div>
+        </div>
+        <div id="adsList" class="stack-list"></div>
+      </section>
+
+      <section id="marketTab" class="tab-panel" aria-labelledby="marketTitle">
+        <div class="page-heading">
+          <span class="eyebrow">SHOP & SUPPORT</span>
+          <h1 id="marketTitle">Market</h1>
+          <p>Discover products from the Jibu demo marketplace.</p>
+        </div>
+
+        <div class="market-toolbar">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input id="productSearch" type="search"
+                   placeholder="Search products..." aria-label="Search products">
+          </label>
+          <span id="productCount" class="muted-text">3 products</span>
+        </div>
+
+        <div id="productsGrid" class="products-grid"></div>
+        <p class="fine-print">Demo catalogue only. Purchases do not charge money in demo mode.</p>
+      </section>
+
+      <section id="modulesTab" class="tab-panel" aria-labelledby="modulesTitle">
+        <div class="page-heading">
+          <span class="eyebrow">TOOLS FOR EVERYDAY LIFE</span>
+          <h1 id="modulesTitle">Your Jibu toolkit</h1>
+          <p>Nine specialised modules. One connected platform.</p>
+        </div>
+
+        <label class="search-box module-search">
+          <span aria-hidden="true">⌕</span>
+          <input id="moduleSearch" type="search"
+                 placeholder="Find a module..." aria-label="Search modules">
+        </label>
+        <div id="modulesGrid" class="module-grid module-grid-large"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="nav-item active" data-tab="home" type="button" aria-current="page">
+        <span class="nav-icon">⌂</span><span>Home</span>
+      </button>
+      <button class="nav-item" data-tab="safiri" type="button">
+        <span class="nav-icon">✦</span><span>Safiri</span>
+      </button>
+      <button class="nav-item" data-tab="market" type="button">
+        <span class="nav-icon">▣</span><span>Market</span>
+      </button>
+      <button class="nav-item" data-tab="modules" type="button">
+        <span class="nav-icon">◈</span><span>Modules</span>
+      </button>
+    </nav>
+  </div>
+
+  <div id="modalBackdrop" class="modal-backdrop" hidden></div>
+
+  <section id="checkoutModal" class="modal-sheet" role="dialog"
+           aria-modal="true" aria-labelledby="checkoutTitle" hidden>
+    <div class="sheet-handle"></div>
+    <button class="modal-close" type="button" data-close-modal
+            aria-label="Close checkout">×</button>
+    <span class="eyebrow">SECURE CHECKOUT</span>
+    <h2 id="checkoutTitle">Complete your order</h2>
+    <p id="checkoutProduct" class="muted-text"></p>
+
+    <div class="checkout-summary">
+      <span>Total</span>
+      <strong id="checkoutPrice">R0.00</strong>
+    </div>
+
+    <label class="field-label" for="paymentProvider">Payment provider</label>
+    <select id="paymentProvider" class="field-control">
+      <option value="payfast">PayFast · South Africa</option>
+      <option value="ozow">Ozow · South Africa</option>
+      <option value="stitch">Stitch · South Africa</option>
+      <option value="peach">Peach Payments · South Africa</option>
+      <option value="stripe">Stripe · Global</option>
+      <option value="paypal">PayPal · Global</option>
+    </select>
+
+    <p id="checkoutModeNote" class="mode-note">
+      Demo checkout — no money will be charged.
+    </p>
+    <button id="confirmCheckout" class="button button-primary button-full"
+            type="button">Buy Now</button>
+    <p id="checkoutMessage" class="feedback" role="status" aria-live="polite"></p>
+    <p class="fine-print">Never enter card details directly into this demo.</p>
+  </section>
+
+  <section id="moduleModal" class="modal-sheet" role="dialog"
+           aria-modal="true" aria-labelledby="moduleModalTitle" hidden>
+    <div class="sheet-handle"></div>
+    <button class="modal-close" type="button" data-close-modal
+            aria-label="Close module">×</button>
+    <span id="moduleCategory" class="eyebrow">JIBU MODULE</span>
+    <h2 id="moduleModalTitle">Module</h2>
+    <p id="moduleDescription" class="muted-text"></p>
+
+    <form id="moduleForm">
+      <label class="field-label" for="modulePrompt">What would you like help with?</label>
+      <textarea id="modulePrompt" class="field-control" rows="3"
+                maxlength="2000" required
+                placeholder="Describe what you need help with..."></textarea>
+      <button id="runModule" class="button button-primary button-full" type="submit">
+        Run demo assistant <span>→</span>
+      </button>
+    </form>
+
+    <div id="moduleResult" class="module-result" hidden aria-live="polite">
+      <span class="eyebrow">SIMULATED RESPONSE</span>
+      <p id="moduleResponse"></p>
+      <p id="moduleDisclaimer" class="fine-print"></p>
+    </div>
+    <p id="moduleError" class="feedback" role="status"></p>
+  </section>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <p class="noscript-message">Jibu requires JavaScript to load its interactive features.</p>
+  </noscript>
+</body>
+</html>
